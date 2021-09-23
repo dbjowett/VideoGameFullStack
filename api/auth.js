@@ -1,4 +1,5 @@
-import axios from 'axios';
+const axios = require('axios');
+require('dotenv').config();
 
 // ENV Variables
 const clientId = process.env.CLIENT_ID;
@@ -10,9 +11,14 @@ const getAuth = async () => {
   const options = {
     method: 'POST'
   };
-  const response = await axios(url, options);
+  // const response = await axios(url, options);
+  const response = axios(url, options)
+    .then((res) => res.json())
+    .catch((e) => console.log(`Error:` + error));
   const accessToken = response.data.access_token;
   return accessToken;
 };
 
-export default getAuth;
+getAuth();
+
+module.exports = getAuth;
