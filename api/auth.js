@@ -5,20 +5,18 @@ require('dotenv').config();
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 
-////// GET AUTHORIZATION TO USE THE DATABASE ///////////////
 const getAuth = async () => {
   const url = `https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`;
   const options = {
     method: 'POST'
   };
-  // const response = await axios(url, options);
-  const response = axios(url, options)
-    .then((res) => res.json())
-    .catch((e) => console.log(`Error:` + error));
-  const accessToken = response.data.access_token;
-  return accessToken;
-};
 
-getAuth();
+  try {
+    const response = await axios(url, options);
+    return response.data.access_token;
+  } catch (error) {
+    console.log(`Couldn't get authorization: `, error);
+  }
+};
 
 module.exports = getAuth;
