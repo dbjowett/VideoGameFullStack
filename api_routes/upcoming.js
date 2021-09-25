@@ -7,7 +7,7 @@ const options = {
   method: 'POST',
   data: `
         fields name, release_dates.*, summary, cover.*; where platforms= (6,48,49,130, 169,167) & cover != null &category = 0 
-        & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${timeNow + oneWeek}; sort first_release_date asc; limit 1;
+        & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${timeNow + oneWeek}; sort first_release_date asc; limit 14;
             `,
   url: 'https://api.igdb.com/v4/games/'
 };
@@ -18,8 +18,7 @@ const fetchUpcomingGames = async () => {
 
 module.exports = (app) => {
   app.get('/api/upcoming', async (req, res) => {
-    const games = await fetchUpcomingGames();
-    console.log(games);
-    res.send(games.data);
+    const { data } = await fetchUpcomingGames();
+    res.send(data);
   });
 };
