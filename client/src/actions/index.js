@@ -2,10 +2,14 @@ import axios from 'axios';
 import { UPCOMING_GAMES } from './types';
 
 const fetchUpcoming = () => {
-  axios
-    .get('/api/upcoming')
-    .then((response) => {
-      setGames(response.data);
-    })
-    .catch((e) => console.log(`Error`, e));
+  return function (dispatch) {
+    axios
+      .get('/api/upcoming')
+      .then((res) => {
+        dispatch({ type: UPCOMING_GAMES, payload: res.data });
+      })
+      .catch((e) => console.log(`There was an error`, e));
+  };
 };
+
+export default fetchUpcoming;

@@ -1,21 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, Component } from 'react';
 import UpcomingGameList from './UpcomingGameList';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import fetchUpcoming from '../actions';
 
-export default function Upcoming() {
-  const [games, setGames] = useState([]);
-  useEffect(() => {
-    axios
-      .get('/api/upcoming')
-      .then((response) => {
-        setGames(response.data);
-      })
-      .catch((e) => console.log(`Error`, e));
-  }, []);
+// const Upcoming = function (props) {
+//   useEffect(() => {
+//     props.fetchUpcoming();
+//   }, []);
 
-  return (
-    <div>
-      <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
-    </div>
-  );
+//   const games = [];
+//   return (
+//     <div>
+//       <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
+//     </div>
+//   );
+// };
+
+// const mapState = (state) => {
+//   const games = state.upcoming;
+// };
+
+// export default connect(mapState, fetchUpcoming)(Upcoming);
+
+class Upcoming extends Component {
+  componentDidMount() {
+    this.props.fetchUpcoming();
+  }
+
+  render() {
+    const games = [];
+    return (
+      <div>
+        <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
+      </div>
+    );
+  }
 }
+
+const mapState = (state) => {
+  return {
+    upcoming: state.upcoming
+  };
+};
+
+export default connect(mapState, { fetchUpcoming })(Upcoming);

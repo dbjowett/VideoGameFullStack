@@ -2,7 +2,6 @@ import '../CSS_Files/GameList.css';
 // import Skeleton from 'react -loading-skeleton'
 
 const UpcomingGameList = ({ title, gameArray }) => {
-  console.log(`gameArray`, gameArray);
   const Games = gameArray.map((game) => {
     console.log(game);
     const cover = game.cover ? game.cover.url.replace('t_thumb', 't_cover_big') : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
