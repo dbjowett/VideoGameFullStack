@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UpcomingGameList from './UpcomingGameList';
 import { connect } from 'react-redux';
-import fetchUpcoming from '../actions';
+import { fetchUpcoming } from '../actions';
 
 class Upcoming extends Component {
   componentDidMount() {

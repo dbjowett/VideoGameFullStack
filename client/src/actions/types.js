@@ -1,1 +1,2 @@
-// export const UPCOMING_GAMES = 'upcoming_games';
+export const UPCOMING_GAMES = 'UPCOMING_GAMES';
+export const SEARCHED_GAMES = 'SEARCHED_GAMES';

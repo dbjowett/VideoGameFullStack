@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 
 require('./api_routes/upcoming')(app);
+require('./api_routes/search')(app);
 
 app.use(cors());
 

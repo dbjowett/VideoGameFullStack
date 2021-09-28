@@ -1,15 +1,21 @@
 import axios from 'axios';
-// import { UPCOMING_GAMES } from './types';
+import { SEARCHED_GAMES, UPCOMING_GAMES } from './types';
 
-const fetchUpcoming = () => {
+export const fetchUpcoming = () => {
   return function (dispatch) {
     axios
       .get('/api/upcoming')
       .then((res) => {
-        dispatch({ type: 'UPCOMING_GAMES', payload: res.data });
+        dispatch({ type: UPCOMING_GAMES, payload: res.data });
       })
       .catch((e) => console.log(`There was an error`, e));
   };
 };
 
-export default fetchUpcoming;
+// export const fetchSearched = (searchTerm) => {
+//   return function (dispatch) {
+//     axios.post('/api/search', searchTerm).then(() => {
+//       dispatch({ type: SEARCHED_GAMES, payload: res.data }).catch((e) => console.log('There was an error', e));
+//     });
+//   };
+// };
