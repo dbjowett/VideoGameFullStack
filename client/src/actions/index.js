@@ -12,10 +12,10 @@ export const fetchUpcoming = () => {
   };
 };
 
-// export const fetchSearched = (searchTerm) => {
-//   return function (dispatch) {
-//     axios.post('/api/search', searchTerm).then(() => {
-//       dispatch({ type: SEARCHED_GAMES, payload: res.data }).catch((e) => console.log('There was an error', e));
-//     });
-//   };
-// };
+export const fetchSearched = (term) => {
+  return function (dispatch) {
+    axios.post('/api/search', term).then((res) => {
+      dispatch({ type: SEARCHED_GAMES, payload: res.data }).catch((e) => console.log('There was an error', e));
+    });
+  };
+};

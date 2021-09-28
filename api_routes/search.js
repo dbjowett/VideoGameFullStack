@@ -7,7 +7,7 @@ const options = {
   url: '/v4/games/'
 };
 
-const fetchSearched = async () => {
+const fetchSearched = async (term) => {
   return (response = await igdb(options));
 };
 
