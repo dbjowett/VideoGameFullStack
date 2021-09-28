@@ -3,12 +3,13 @@ import UpcomingGameList from './UpcomingGameList';
 import { connect } from 'react-redux';
 import fetchUpcoming from '../actions';
 
+// useSelector .. useDispatch
+
 // const Upcoming = function (props) {
 //   useEffect(() => {
 //     props.fetchUpcoming();
 //   }, []);
 
-//   const games = [];
 //   return (
 //     <div>
 //       <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
@@ -16,11 +17,7 @@ import fetchUpcoming from '../actions';
 //   );
 // };
 
-// const mapState = (state) => {
-//   const games = state.upcoming;
-// };
-
-// export default connect(mapState, fetchUpcoming)(Upcoming);
+// export default Upcoming;
 
 class Upcoming extends Component {
   componentDidMount() {
@@ -29,9 +26,10 @@ class Upcoming extends Component {
 
   render() {
     const games = [];
+    console.log('Props', this.props.upcoming);
     return (
       <div>
-        <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
+        <UpcomingGameList title='Upcoming (7 days)' gameArray={this.props.upcoming} />
       </div>
     );
   }
