@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './Landing';
 import Header from './header';
 // import Search from './Search';
-import GameContainer from './GameContainer';
+// import GameContainer from './GameContainer';
 import Footer from './footer';
 import Upcoming from './Upcoming';
 import GamePage from './GamePage';
