@@ -13,9 +13,10 @@ export const fetchUpcoming = () => {
 };
 
 export const fetchSearched = (term) => {
-  return function (dispatch) {
-    axios.post('/api/search', term).then((res) => {
-      dispatch({ type: SEARCHED_GAMES, payload: res.data }).catch((e) => console.log('There was an error', e));
-    });
-  };
+  axios
+    .get('/api/search', term)
+    .then((res) => {
+      return { type: SEARCHED_GAMES, payload: res.data };
+    })
+    .catch((e) => console.log('There was an error', e));
 };

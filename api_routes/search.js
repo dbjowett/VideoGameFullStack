@@ -1,5 +1,4 @@
 const igdb = require('../api/igdb');
-const term = 'zelda';
 
 const options = {
   method: 'POST',
@@ -12,7 +11,7 @@ const fetchSearched = async (term) => {
 };
 
 module.exports = (app) => {
-  app.get('/api/upcoming', async (req, res) => {
+  app.get('/api/search', async (req, res) => {
     const { data } = await fetchSearched();
     res.send(data);
   });

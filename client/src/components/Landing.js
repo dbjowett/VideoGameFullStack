@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <div>
       <h1>Welcome</h1>
-      <button>
+      <button className='landing-btn'>
         <Link to='/upcoming'>GET STARTED</Link>
       </button>
     </div>

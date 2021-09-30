@@ -9,7 +9,6 @@ import './CSS_Files/style.css';
 import App from './components/app';
 import reducers from './reducers';
 
-// First argument is reducer //Second is initial state //Third is middleware
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDom.render(
