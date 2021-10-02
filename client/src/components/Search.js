@@ -29,7 +29,7 @@ const Search = () => {
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   useEffect(() => {
-    games.length > 0 ? setVisible(true) : setVisible(false);
+    debouncedSearchTerm.length > 1 ? setVisible(true) : setVisible(false);
     if (debouncedSearchTerm) {
       dispatch(fetchSearched(debouncedSearchTerm));
     } else {
@@ -42,8 +42,8 @@ const Search = () => {
       <div class='searchBox'>
         <input placeholder='Search Video Games' onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
-      {/* <SearchedGameList /> */}
-      {visible ? <SearchedGameList title='Search' gameArray={games} /> : <div>hello</div>}
+
+      <div className='resultsContainer'>{visible ? <SearchedGameList title='Search' gameArray={games} /> : null}</div>
     </div>
   );
 };

@@ -19,6 +19,12 @@
     width: 100%;
 }
 
+.resultsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Game Container Start  */
 .gameContainer {
     margin-top: 40px;
@@ -30,7 +36,7 @@
     grid-gap: 40px 15px;
     justify-items: center;
     align-items: center;
-    border: 1px solid red ;
+    /* border: 1px solid red ; */
 }
 
 .gameItem {
@@ -43,7 +49,7 @@
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    border: 1px solid green ;
+    /* border: 1px solid green ; */
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.017),
         0 6.7px 5.3px rgba(0, 0, 0, 0.022),

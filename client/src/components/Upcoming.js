@@ -10,8 +10,8 @@ class Upcoming extends Component {
 
   render() {
     return (
-      <div>
-        <UpcomingGameList title='Upcoming (7 days)' gameArray={this.props.upcoming} />
+      <div className='resultsContainer'>
+        <UpcomingGameList title='Upcoming' gameArray={this.props.upcoming} />
       </div>
     );
   }

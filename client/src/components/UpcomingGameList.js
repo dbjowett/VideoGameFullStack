@@ -20,8 +20,10 @@ const UpcomingGameList = ({ title, gameArray }) => {
       }
     })();
 
+    const itemClick = (e) => console.log(e);
+
     return (
-      <div key={game.id} className='gameItem'>
+      <div key={game.id} className='gameItem' onClick={itemClick}>
         <img className='gamePhoto' src={cover} alt={game.name} />
         <div className='gameDesc'>
           <h3>{game.name}</h3>
@@ -31,8 +33,8 @@ const UpcomingGameList = ({ title, gameArray }) => {
           </div>
           <div className='gameInfoBox'>
             <div className='releaseDate'>{releaseDate}</div>
-            {/* <div className='releaseDate'>{}96%</div>
-            <div className='releaseDate'>{}RPG</div> */}
+            <div className='releaseDate'>96%</div>
+            <div className='releaseDate'>RPG</div>
           </div>
         </div>
       </div>

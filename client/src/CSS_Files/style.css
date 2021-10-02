@@ -22,7 +22,6 @@
     justify-content: space-between;
     background-color: #13181f;
     padding: 10px 0px;
-    /* border: 1px dashed red; */
 }
 
 .navLogo {
@@ -107,7 +106,6 @@
 }
 
 .searchItems {
-    border: red 1px solid;
     display: flex;
     flex-direction: row;
     justify-content: center;
