@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Landing from './Landing';
 import Header from './header';
@@ -13,20 +13,21 @@ class App extends React.Component {
   render() {
     return (
       <div className='body'>
-        <BrowserRouter>
+        <Router>
           <div>
             <Header />
-
-            <Route exact path='/' component={Landing} />
-            <Route path='/upcoming'>
-              <Search />
-              <Upcoming />
-            </Route>
-            <Route path='/gamepage' component={GamePage} />
+            <Switch>
+              <Route exact path='/' component={Landing} />
+              <Route exact path='/games'>
+                <Search />
+                <Upcoming />
+              </Route>
+              <Route path='/games/:id' component={GamePage} />
+            </Switch>
             <Footer />
             {/* <GameContainer /> */}
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

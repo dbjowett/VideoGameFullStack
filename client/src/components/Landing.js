@@ -6,7 +6,7 @@ export default function Landing() {
     <div>
       <h1>Welcome</h1>
       <button className='landing-btn'>
-        <Link to='/upcoming'>GET STARTED</Link>
+        <Link to='/games'>GET STARTED</Link>
       </button>
     </div>
   );

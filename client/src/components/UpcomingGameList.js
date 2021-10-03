@@ -1,4 +1,5 @@
 import '../CSS_Files/GameList.css';
+import { Link } from 'react-router-dom';
 // import Skeleton from 'react -loading-skeleton'
 
 const UpcomingGameList = ({ title, gameArray }) => {
@@ -20,24 +21,24 @@ const UpcomingGameList = ({ title, gameArray }) => {
       }
     })();
 
-    const itemClick = (e) => console.log(e);
-
     return (
-      <div key={game.id} className='gameItem' onClick={itemClick}>
-        <img className='gamePhoto' src={cover} alt={game.name} />
-        <div className='gameDesc'>
-          <h3>{game.name}</h3>
-          <div className='summary'>
-            {game.summary ? game.summary.slice(0, 137) : 'No summary available'}
-            ...
-          </div>
-          <div className='gameInfoBox'>
-            <div className='releaseDate'>{releaseDate}</div>
-            <div className='releaseDate'>96%</div>
-            <div className='releaseDate'>RPG</div>
+      <Link to={`/games/${game.id}`} style={{ textDecoration: 'none', color: 'white' }}>
+        <div key={game.id} className='gameItem'>
+          <img className='gamePhoto' src={cover} alt={game.name} />
+          <div className='gameDesc'>
+            <h3>{game.name}</h3>
+            <div className='summary'>
+              {game.summary ? game.summary.slice(0, 137) : 'No summary available'}
+              ...
+            </div>
+            <div className='gameInfoBox'>
+              <div className='releaseDate'>{releaseDate}</div>
+              <div className='releaseDate'>96%</div>
+              <div className='releaseDate'>RPG</div>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   });
   return (
