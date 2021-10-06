@@ -6,8 +6,8 @@ const timeNow = Math.floor(Date.now() / 1000);
 const options = {
   method: 'POST',
   data: `
-        fields name, release_dates.*, summary, screenshots.image_id, cover.*; 
-        where platforms= (6,48,49,130, 169,167) & cover != null & category = 0 
+        fields name, release_dates.*, summary, screenshots.image_id, cover.*, genres.name, platforms.abbreviation; 
+        where platforms= (6,48,49,130,169,167) & cover != null & category = 0 
         & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${timeNow + oneWeek}; 
         sort first_release_date asc; 
         limit 14;

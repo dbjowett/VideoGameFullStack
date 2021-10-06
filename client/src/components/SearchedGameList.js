@@ -1,5 +1,6 @@
 import '../CSS_Files/GameList.css';
 import { Link } from 'react-router-dom';
+// import useReleased from '../hooks/useReleased';
 
 const SearchedGameList = ({ title, gameArray }) => {
   const Games = gameArray.map((game) => {

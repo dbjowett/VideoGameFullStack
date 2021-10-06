@@ -36,7 +36,6 @@
     grid-gap: 40px 15px;
     justify-items: center;
     align-items: center;
-    /* border: 1px solid red ; */
 }
 
 .gameItem {
@@ -49,12 +48,16 @@
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    /* border: 1px solid green ; */
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.017),
         0 6.7px 5.3px rgba(0, 0, 0, 0.022),
         0 12.5px 10px rgba(0, 0, 0, 0.027)
     ;   
+}
+
+.gameItem:hover {
+    background: rgba(0,0,0,0.1);
+	box-shadow: inset 0 0 0 1px white;
 }
 
 h3 {

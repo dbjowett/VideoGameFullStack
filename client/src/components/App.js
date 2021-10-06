@@ -5,7 +5,7 @@ import Landing from './Landing';
 import Header from './header';
 import Search from './Search';
 // import GameContainer from './GameContainer';
-import Footer from './footer';
+import Footer from './Footer';
 import Upcoming from './Upcoming';
 import GamePage from './GamePage';
 
@@ -20,12 +20,12 @@ class App extends React.Component {
               <Route exact path='/' component={Landing} />
               <Route exact path='/games'>
                 <Search />
+                {/* <GameContainer /> */}
                 <Upcoming />
               </Route>
               <Route path='/games/:id' component={GamePage} />
             </Switch>
             <Footer />
-            {/* <GameContainer /> */}
           </div>
         </Router>
       </div>

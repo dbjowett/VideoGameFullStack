@@ -5,7 +5,7 @@ import { fetchUpcoming } from '../actions';
 
 class Upcoming extends Component {
   componentDidMount() {
-    this.props.fetchUpcoming();
+    return this.props.upcoming.length === 0 ? this.props.fetchUpcoming() : null;
   }
 
   render() {

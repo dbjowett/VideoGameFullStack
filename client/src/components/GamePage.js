@@ -9,7 +9,12 @@ const GamePage = ({ match }) => {
   const allGames = [...searchedgames, ...upcominggames];
   const currentGame = allGames.find((game) => game.id === gameId);
 
-  const renderedVideos = currentGame.video ? currentGame.videos.slice(0, 3).map((video) => <iframe width='200' height='200' frameBorder='0' className='video' src={'https://www.youtube.com/embed/${video.video_id}'} />) : null;
+  const renderedImages = currentGame.screenshots ? currentGame.screenshots.slice(0, 3).map((img) => <img src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${img.image_id}.jpg`} alt='' />) : null;
+  const renderedVideos = currentGame.videos ? currentGame.videos.slice(0, 3).map((video) => <iframe width='200' height='200' frameBorder='0' className='video' src={`https://www.youtube.com/embed/${video.video_id}`} />) : null;
+  const renderedPlatforms = currentGame.platforms ? currentGame.platforms.map((platform) => <li className='gamePlatform'>{platform.abbreviation}</li>) : null;
+  const renderedGenres = currentGame.genres ? currentGame.genres.map((genre) => <li>{genre.name}</li>) : null;
+
+  console.log(currentGame);
   return (
     <div>
       <div className='hero'>
@@ -24,35 +29,33 @@ const GamePage = ({ match }) => {
           <div className='gameInfo'>
             <ul className='gameInfoItems'>
               <h2>Game Info</h2>
-              <li className='info'>Rating: 95%</li>
-              <li className='info'>Release: Sept 2017</li>
+              {currentGame.total_rating ? <li className='info'>Rating: {Math.round(currentGame.total_rating)}%</li> : null}
+              <li className='info'>Release: {currentGame.release_dates ? currentGame.release_dates[0].human : currentGame.release_dates[0].human}</li>
               <li className='info'>Players: 1</li>
-              <li className='info'>Genre: Role-Playing Game</li>
+              <h2>Genres</h2>
+              <ul>{renderedGenres}</ul>
             </ul>
             <ul className='platformInfo'>
               <h2>Platforms</h2>
-              <li className='gamePlatform'>PS5</li>
-              <li className='gamePlatform'>Xbox</li>
-              <li className='gamePlatform'>PS4</li>
-              <li className='gamePlatform'>Xbox Series</li>
-              <li className='gamePlatform'>PC</li>
+              {renderedPlatforms}
             </ul>
           </div>
-          <h2>Summary</h2>
-          <div>{currentGame.summary}</div>
+          <div className='gameSummary'>
+            <h2>Summary</h2>
+            <div>{currentGame.summary}</div>
+          </div>
         </div>
         <div className='mediaInfo'>
           <div className='screenshots'>
             <h2>Screenshots</h2>
-            <img src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${currentGame.screenshots[1].image_id}.jpg`} alt='' />
-            <img src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${currentGame.screenshots[2].image_id}.jpg`} alt='' />
-            <img src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${currentGame.screenshots[3].image_id}.jpg`} alt='' />
+            {renderedImages}
           </div>
-          <div className='videos'>
-            <h2>Videos</h2>
-            {/* <iframe width='200' height='200' src={'www.youtube.com/embed/5nLipy-Z4yo'} /> */}
-            {renderedVideos}
-          </div>
+          {currentGame.videos ? (
+            <div className='videos'>
+              <h2>Videos</h2>
+              {renderedVideos}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ export default function GameList({ title, release, rating, gameArray }) {
   const renderedGames = gameArray.map((game) => {
     //Construct cover
     const cover = game.cover ? game.cover.url.replace('t_thumb', 't_cover_big') : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
-
+  
     return (
         <Link to={`/games/${game.id}`} style={{ textDecoration: 'none', color: 'white' }}>
           <div key={game.id} className='gameItem'>
@@ -18,7 +18,7 @@ export default function GameList({ title, release, rating, gameArray }) {
               <div className='gameInfoBox'>
                 <div className='releaseDate'>{release}</div>
                 <div className='releaseDate'>{rating}</div>
-                <div className='releaseDate'>RPG</div>
+                <div className='releaseDate'>{genre}</div>
               </div>
             </div>
           </div>
