@@ -19,7 +19,7 @@ const SearchedGameList = ({ title, gameArray }) => {
             <div className='gameInfoBox'>
               <div className='releaseDate'>{releaseYear}</div>
               <div className='releaseDate'>{Math.round(game.total_rating)}%</div>
-              <div className='releaseDate'>{}RPG</div>
+              <div className='releaseDate'>{game.genres[0].name}</div>
             </div>
           </div>
         </div>
