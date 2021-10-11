@@ -14,7 +14,7 @@ const SearchedGameList = ({ title, gameArray }) => {
         <div key={game.id} className='gameItem'>
           <img className='gamePhoto' src={cover} alt={game.name} />
           <div className='gameDesc'>
-            <h3>{game.name}</h3>
+            <h3 className='gameName'>{game.name}</h3>
             <div className='summary'>{game.summary ? game.summary.slice(0, 137) : 'No summary available'}...</div>
             <div className='gameInfoBox'>
               <div className='releaseDate'>{releaseYear}</div>

@@ -14,7 +14,7 @@ const GamePage = ({ match }) => {
   const renderedPlatforms = currentGame.platforms ? currentGame.platforms.map((platform) => <li className='gamePlatform'>{platform.abbreviation}</li>) : null;
   const renderedGenres = currentGame.genres ? currentGame.genres.map((genre) => <li>{genre.name}</li>) : null;
 
-  console.log(currentGame);
+  // console.log(currentGame);
   return (
     <div>
       <div className='hero'>
