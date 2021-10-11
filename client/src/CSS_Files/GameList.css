@@ -38,6 +38,7 @@
     align-items: center;
 }
 
+
 .gameItem {
     width: 260px;
     height: 400px; 
@@ -95,7 +96,7 @@
     font-size: 9px;
     width: 190px;
     text-align: center;
-    left: 160px;
+    left: 7px;
     top: 107px;
     display: flex;
     align-items: center;

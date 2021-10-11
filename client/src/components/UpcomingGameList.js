@@ -21,7 +21,7 @@ const UpcomingGameList = ({ title, gameArray }) => {
             </div>
             <div className='gameInfoBox'>
               <div className='releaseDate'>{game.release_dates[0].human.split(',')[0]}</div>
-              <div className='releaseDate'>{game.genres[0].name}</div>
+              {game.genres ? <div className='releaseDate'>{game.genres[0].name}</div> : <div className='releaseDate'>Unknown</div>}
             </div>
           </div>
         </div>
