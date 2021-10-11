@@ -16,7 +16,7 @@
 
 .line {
     border-radius: 20px;
-    width: 100%;
+    width: 85vw;
 }
 
 .resultsContainer {
@@ -37,7 +37,6 @@
     justify-items: center;
     align-items: center;
 }
-
 
 .gameItem {
     width: 260px;
