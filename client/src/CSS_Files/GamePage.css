@@ -64,7 +64,7 @@ h2 {
 }
 
 .container>div {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: auto;
 }
 
@@ -72,6 +72,10 @@ h2 {
     width: 200px;
     height: 200px;
     object-fit: cover;
+}
+
+.screenshots img:not(:first-of-type){
+    padding-left: 10px;
 }
 
 .video {

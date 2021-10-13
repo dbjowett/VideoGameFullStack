@@ -1,6 +1,5 @@
 const igdb = require('../api/igdb');
 
-const oneWeek = 604800;
 const timeNow = Math.floor(Date.now() / 1000);
 
 const options = {

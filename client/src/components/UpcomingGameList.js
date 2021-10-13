@@ -1,6 +1,5 @@
 import '../CSS_Files/GameList.css';
 import { Link } from 'react-router-dom';
-// import Skeleton from 'react-loading-skeleton';
 
 const UpcomingGameList = ({ title, gameArray }) => {
   const Games = gameArray.map((game) => {

@@ -206,22 +206,23 @@ footer {
 /* Lower Container (below line) */
 .footContainer {
     position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 98%; 
-  height: 2.5rem;
+    bottom: 0;
+    left: 0;
+    width: 98%; 
+    height: 2.5rem;
     font-size: 10px;
     padding: 10px;
     background-color: #13181f;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
 .footerDetails {
     display: flex;
     margin: 0px; 
-    padding: 0;
+    padding: 0px 40px 0px 40px;
 }
 
 .footerDetails li {
