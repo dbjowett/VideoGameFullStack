@@ -1,20 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+// import { useState, useEffect } from 'react';
 
 const GamePage = ({ match }) => {
-  const gameId = parseInt(match.params.id);
-
   const searchedgames = useSelector((state) => state.searched);
   const upcominggames = useSelector((state) => state.upcoming);
   const allGames = [...searchedgames, ...upcominggames];
-  const currentGame = allGames.find((game) => game.id === gameId);
+  const currentGame = allGames.find((game) => game.id === parseInt(match.params.id));
 
+  // Mapping arrays
   const renderedImages = currentGame.screenshots ? currentGame.screenshots.slice(0, 3).map((img) => <img src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${img.image_id}.jpg`} alt='' />) : null;
-  const renderedVideos = currentGame.videos ? currentGame.videos.slice(0, 3).map((video) => <iframe width='560' height='340' frameBorder='0' className='video' src={`https://www.youtube.com/embed/${video.video_id}`} />) : null;
+  const renderedVideos = currentGame.videos ? currentGame.videos.slice(0, 3).map((video) => <iframe width='560' height='340' frameBorder='0' className='video' title={`${video.name}`} src={`https://www.youtube.com/embed/${video.video_id}`} />) : null;
   const renderedPlatforms = currentGame.platforms ? currentGame.platforms.map((platform) => <li className='gamePlatform'>{platform.abbreviation}</li>) : null;
   const renderedGenres = currentGame.genres ? currentGame.genres.map((genre) => <li>{genre.name}</li>) : null;
+  currentGame.videos.map((video) => console.log(video.name));
 
-  // console.log(currentGame);
+  console.log('current game', currentGame.videos);
   return (
     <div>
       <div className='hero'>
