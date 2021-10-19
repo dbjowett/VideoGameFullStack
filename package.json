@@ -8,7 +8,7 @@
     "server": "nodemon index.js",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "postinstall": "npm run build",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
