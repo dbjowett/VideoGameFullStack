@@ -1,13 +1,11 @@
 const axios = require('axios');
 const getAuth = require('./auth');
-
-// // ENV Variables
-const clientId = process.env.CLIENT_ID;
+const keys = require('../config/keys');
 
 const instance = axios.create({
   headers: {
     Accept: 'application/json',
-    'Client-ID': clientId,
+    'Client-ID': keys.CLIENT_ID,
     'Access-Control-Allow-Origin': '*'
   }
 });

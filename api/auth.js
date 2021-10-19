@@ -1,12 +1,8 @@
 const axios = require('axios');
-require('dotenv').config();
-
-// ENV Variables
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
+const keys = require('../config/keys');
 
 const getAuth = async () => {
-  const url = `https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`;
+  const url = `https://id.twitch.tv/oauth2/token?client_id=${keys.CLIENT_ID}&client_secret=${keys.CLIENT_SECRET}&grant_type=client_credentials`;
   const options = {
     method: 'POST'
   };

@@ -22,6 +22,7 @@ passport.use(
           // User already exists
           done(null, existingUser);
         } else {
+          // No user, make a new one and save
           new User({
             googleId: profile.id
           })
