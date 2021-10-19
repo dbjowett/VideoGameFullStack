@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 const UpcomingGameList = ({ title, gameArray }) => {
   const Games = gameArray.map((game) => {
-    const cover = game.cover ? game.cover.url.replace('t_thumb', 't_cover_big') : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
     // console.log(game);
-    const dates = game.release_dates.map((rd) => new Date(rd.date * 1000));
-    const diffInDays = Math.floor((dates[0] - new Date()) / (1000 * 3600 * 24));
+    const cover = game.cover ? game.cover.url.replace('t_thumb', 't_cover_big') : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
+    // const dates = game.release_dates.map((rd) => new Date(rd.date * 1000));
 
     return (
       <Link to={`/games/${game.id}`} style={{ textDecoration: 'none', color: 'white' }}>

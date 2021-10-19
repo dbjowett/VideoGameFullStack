@@ -1,12 +1,17 @@
 const express = require('express');
-const PORT = process.env.PORT || 5000;
-// const cors = require('cors');
+const mongoose = require('mongoose');
+
+require('./models/User');
+require('./services/passport');
+
+const keys = require('./config/keys');
 
 const app = express();
+mongoose.connect(keys.mongoURI);
 
-require('./api_routes/upcoming')(app);
-require('./api_routes/search')(app);
+require('./routes/userAuthRoutes')(app);
+require('./routes/upcoming')(app);
+require('./routes/search')(app);
 
-// app.use(cors());
-
-app.listen(PORT, () => `Server running on port: ${PORT}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
