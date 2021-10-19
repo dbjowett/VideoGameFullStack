@@ -13,7 +13,7 @@ const GamePage = ({ match }) => {
   const renderedVideos = currentGame.videos ? currentGame.videos.slice(0, 3).map((video) => <iframe width='560' height='340' frameBorder='0' className='video' title={`${video.name}`} src={`https://www.youtube.com/embed/${video.video_id}`} />) : null;
   const renderedPlatforms = currentGame.platforms ? currentGame.platforms.map((platform) => <li className='gamePlatform'>{platform.abbreviation}</li>) : null;
   const renderedGenres = currentGame.genres ? currentGame.genres.map((genre) => <li>{genre.name}</li>) : null;
-  currentGame.videos.map((video) => console.log(video.name));
+  // currentGame.videos.map((video) => console.log(video.name));
 
   console.log('current game', currentGame.videos);
   return (
@@ -53,7 +53,7 @@ const GamePage = ({ match }) => {
         </div>
         <div className='div6'>
           <h2>Summary</h2>
-          <div>{currentGame.summary}</div>
+          <div>{currentGame ? currentGame.summary : 'Summary not yet available'}</div>
         </div>
         <div className='div7'></div>
         {currentGame.videos ? (
