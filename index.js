@@ -13,5 +13,9 @@ require('./routes/userAuthRoutes')(app);
 require('./routes/upcoming')(app);
 require('./routes/search')(app);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
