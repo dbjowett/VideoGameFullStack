@@ -1,7 +1,7 @@
 module.exports = {
-    CLIENT_ID = process.env.CLIENT_ID,
-    CLIENT_SECRET = process.env.CLIENT_SECRET,
-    googleClientID = process.env.googleClientID,
-    googleClientSecret = process.env.googleClientSecret,
-    mongoURI = process.env.mongoURI
+  id: process.env.TWITCH_CLIENT_ID,
+  secret: process.env.TWITCH_CLIENT_SECRET,
+  googleClientID: process.env.GOOGLE_CLIENT_ID,
+  googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  mongoURI: process.env.MONGO_URI
 };
