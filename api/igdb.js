@@ -5,7 +5,7 @@ const keys = require('../config/keys');
 const instance = axios.create({
   headers: {
     Accept: 'application/json',
-    'Client-ID': keys.CLIENT_ID,
+    'Client-ID': keys.twitch_id,
     'Access-Control-Allow-Origin': '*'
   }
 });
