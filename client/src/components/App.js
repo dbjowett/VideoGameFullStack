@@ -1,10 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import Landing from './Landing';
 import Header from './header';
 import Search from './Search';
-// import GameContainer from './GameContainer';
 import Footer from './Footer';
 import Upcoming from './Upcoming';
 import GamePage from './GamePage';
@@ -17,10 +14,8 @@ class App extends React.Component {
           <div>
             <Header />
             <Switch>
-              <Route exact path='/' component={Landing} />
-              <Route exact path='/games'>
+              <Route exact path='/'>
                 <Search />
-                {/* <GameContainer /> */}
                 <Upcoming />
               </Route>
               <Route path='/games/:id' component={GamePage} />
