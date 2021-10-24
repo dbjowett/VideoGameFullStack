@@ -171,7 +171,19 @@ li {
     height: 225px;
     }
 }
+/* 500 */
+@media (max-width: 500px) {
+    .gameInfoContainer {
+        display: flex;
+        width: auto;
+    }
+    .video {
+        width: 300px;
+        height: 169px;
+        }
+}
 
+/* 450 */
 @media (max-width: 450px) {
     .logo {
         left: 5px;
@@ -190,17 +202,26 @@ li {
     }
 }
 
-/* 500 */
-@media (max-width: 500px) {
-    .gameInfoContainer {
-        display: flex;
-        width: auto;
+/* 385 */
+@media (max-width: 385px) {
+    .logo {
+        left: 0px;
+        top: 250px; 
     }
-    .video {
-        width: 300px;
-        height: 169px;
-        }
+    
+    .iconImg {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .gameTitle {
+        height: 80px;
+        font-size: 1.7rem;
+        min-width: 80px;
+    }
 }
+
+
 
 /* .logo {
     left: 125px;
