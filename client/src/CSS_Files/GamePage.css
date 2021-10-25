@@ -53,16 +53,17 @@ li {
 
 .gameInfoContainer {
     display: flex;
-    width: 500px;
+    max-width: 500px;
 }
 
 .gameInfoContainer>*{
     padding: 20px; 
 }
 
+
 .infoAndScreenshots {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     max-width: 1300px;
     width: 90%;
@@ -70,6 +71,7 @@ li {
 .screenshots img {
     width: 200px;
     height: 200px;
+    margin-bottom: 20px;
     object-fit: cover;
 }
 
@@ -86,10 +88,13 @@ li {
     width: 90%;
 }
 
-
 .gameSummary {
-    max-width: 500px;
+    max-width: 460px;
+    height: auto;
+    margin-bottom: 75px;
 }
+
+
 
 .videos {
     padding-right: 100px;
@@ -103,14 +108,14 @@ li {
     height: 340px;
 }
 
-
 /* Media Queries */
-/* 1200 */
+/* 1300 */
 @media (max-width: 1300px) {
     .infoAndScreenshots {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
     }
+    
     .summaryAndVideos {
         flex-direction: column;
         justify-content: space-between;
@@ -120,10 +125,20 @@ li {
     }
     .videos {
         padding-right: 0;
-        padding-top: 50px;
+        padding-top: 0px;
+    }
+    .video {
+        width: 460px;
+        height: 259px;
     }
     .video:not(:first-of-type){
         padding-top: 30px;
+    }
+}
+
+@media (max-width: 980px) {
+    .summary {
+        max-width: 480px
     }
 }
 
@@ -134,8 +149,16 @@ li {
     }
 }
 
-/* 720 */
+/* 740 */
 @media (max-width: 740px) {
+    .gameInfoContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .summary{
+        width: 80%;
+        max-width: 90%;
+    }
     .screenshots {
         display: flex;
         flex-direction: column;
@@ -148,7 +171,9 @@ li {
         padding-left: 0px;
         padding-top: 30px;
     }
+    
 }
+
 /* 620 */
 @media (max-width: 600px) {
     .logo {
@@ -165,11 +190,12 @@ li {
         height: 150px;
         width: 250px;
     }
-    .video {
-    width: 400px;
+    /* .video {
+    width: 460px;
     height: 225px;
-    }
+    } */
 }
+
 /* 500 */
 @media (max-width: 500px) {
     .gameInfoContainer {

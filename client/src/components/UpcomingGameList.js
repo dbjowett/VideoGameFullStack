@@ -27,7 +27,7 @@ const UpcomingGameList = ({ title, gameArray }) => {
     );
   });
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div className='gameContainerTitle'>
         <span className='line'></span>
         <h1>{title}</h1>

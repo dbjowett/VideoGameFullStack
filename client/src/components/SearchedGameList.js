@@ -29,7 +29,7 @@ const SearchedGameList = ({ title, gameArray }) => {
   //End of Map Function
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div className='gameContainerTitle'>
         <span className='line'></span>
         <h1>{title}</h1>
