@@ -2,7 +2,6 @@
     position: relative;
 }
 h2 {
-    text-decoration: underline;
     padding-bottom: 8px;
 }
 li {
@@ -220,33 +219,3 @@ li {
         min-width: 80px;
     }
 }
-
-
-
-/* .logo {
-    left: 125px;
-    top: 200px; 
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-}
-
-.iconImg {
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.gameTitle {
-    background-color: rgba(225,225,225,.9);
-    color: black;
-    height: 200px;
-    max-width: 350px;
-    min-width: 270px;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px;
-} */
