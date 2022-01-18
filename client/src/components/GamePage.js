@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const GamePage = ({ match }) => {
   const searchedgames = useSelector((state) => state.searched);
@@ -13,6 +13,13 @@ const GamePage = ({ match }) => {
   const renderedVideos = currentGame.videos ? currentGame.videos.slice(0, 3).map((video) => <iframe frameBorder='0' className='video' title={`${video.name}`} src={`https://www.youtube.com/embed/${video.video_id}`} />) : null;
   const renderedPlatforms = currentGame.platforms ? currentGame.platforms.map((platform) => <li className='gamePlatform'>{platform.abbreviation}</li>) : null;
   const renderedGenres = currentGame.genres ? currentGame.genres.map((genre) => <li>{genre.name}</li>) : null;
+
+  // Summary Show
+  const [readMore, setReadMore] = useState(false);
+
+  if (currentGame.summary.length > 250) {
+    return;
+  }
 
   // console.log('current game', currentGame.videos);
   return (
@@ -56,7 +63,10 @@ const GamePage = ({ match }) => {
         <div className='summaryAndVideos'>
           <div className='gameSummary'>
             <h2>Summary</h2>
-            <div>{currentGame ? currentGame.summary : 'Summary not yet available'}</div>
+            {readMore ? currentGame.summary : `${currentGame.summary.substring(0, 250)}`}
+            <button className='readMore' onClick={() => setReadMore(!readMore)}>
+              {readMore ? 'Read Less ' : 'Read More'}
+            </button>
           </div>
           {/* Videos */}
           {currentGame.videos ? (
